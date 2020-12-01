@@ -12,15 +12,15 @@
 		CE2EA0B4256E0B4D00A86EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2EA0B3256E0B4D00A86EAC /* Assets.xcassets */; };
 		CE2EA0B7256E0B4D00A86EAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2EA0B6256E0B4D00A86EAC /* Preview Assets.xcassets */; };
 		CE2EA0C1256E0CC300A86EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE2EA0C0256E0CC300A86EAC /* Alamofire */; };
-		CE2EA0CA256E111D00A86EAC /* Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE2EA0C9256E111D00A86EAC /* Font.ttf */; };
+		CE2EA0CA256E111D00A86EAC /* ND Astroneer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE2EA0C9256E111D00A86EAC /* ND Astroneer.ttf */; };
 		CE2EA0CE256E53FD00A86EAC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA0CD256E53FD00A86EAC /* Home.swift */; };
 		CE2EA0D2256E541800A86EAC /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA0D1256E541800A86EAC /* SignIn.swift */; };
-		CE2EA0D5256E542200A86EAC /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA0D4256E542200A86EAC /* SignUp.swift */; };
 		CE2EA0D8256E628300A86EAC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA0D7256E628300A86EAC /* ViewModel.swift */; };
 		CE2EA0DB256E635E00A86EAC /* EnumChangeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA0DA256E635E00A86EAC /* EnumChangeScene.swift */; };
 		CE2EA0E1256E691800A86EAC /* LogInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA0E0256E691800A86EAC /* LogInData.swift */; };
 		CE2EA0E4256E693B00A86EAC /* LogOutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA0E3256E693B00A86EAC /* LogOutData.swift */; };
 		CE2EA0E7256E694D00A86EAC /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA0E6256E694D00A86EAC /* SignUpData.swift */; };
+		CE94C6DC2574D25E00563E20 /* Emblema One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE94C6DB2574D25E00563E20 /* Emblema One.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,15 +30,15 @@
 		CE2EA0B3256E0B4D00A86EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE2EA0B6256E0B4D00A86EAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE2EA0B8256E0B4D00A86EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE2EA0C9256E111D00A86EAC /* Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Font.ttf; sourceTree = "<group>"; };
+		CE2EA0C9256E111D00A86EAC /* ND Astroneer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ND Astroneer.ttf"; sourceTree = "<group>"; };
 		CE2EA0CD256E53FD00A86EAC /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CE2EA0D1256E541800A86EAC /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
-		CE2EA0D4256E542200A86EAC /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		CE2EA0D7256E628300A86EAC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		CE2EA0DA256E635E00A86EAC /* EnumChangeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumChangeScene.swift; sourceTree = "<group>"; };
 		CE2EA0E0256E691800A86EAC /* LogInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInData.swift; sourceTree = "<group>"; };
 		CE2EA0E3256E693B00A86EAC /* LogOutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutData.swift; sourceTree = "<group>"; };
 		CE2EA0E6256E694D00A86EAC /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpData.swift; sourceTree = "<group>"; };
+		CE94C6DB2574D25E00563E20 /* Emblema One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Emblema One.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,8 @@
 		CE2EA0C3256E0D9400A86EAC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				CE2EA0C9256E111D00A86EAC /* Font.ttf */,
+				CE94C6DB2574D25E00563E20 /* Emblema One.ttf */,
+				CE2EA0C9256E111D00A86EAC /* ND Astroneer.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -107,7 +108,6 @@
 			children = (
 				CE2EA0CD256E53FD00A86EAC /* Home.swift */,
 				CE2EA0D1256E541800A86EAC /* SignIn.swift */,
-				CE2EA0D4256E542200A86EAC /* SignUp.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -193,7 +193,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2EA0CA256E111D00A86EAC /* Font.ttf in Resources */,
+				CE94C6DC2574D25E00563E20 /* Emblema One.ttf in Resources */,
+				CE2EA0CA256E111D00A86EAC /* ND Astroneer.ttf in Resources */,
 				CE2EA0B7256E0B4D00A86EAC /* Preview Assets.xcassets in Resources */,
 				CE2EA0B4256E0B4D00A86EAC /* Assets.xcassets in Resources */,
 			);
@@ -214,7 +215,6 @@
 				CE2EA0D2256E541800A86EAC /* SignIn.swift in Sources */,
 				CE2EA0E1256E691800A86EAC /* LogInData.swift in Sources */,
 				CE2EA0D8256E628300A86EAC /* ViewModel.swift in Sources */,
-				CE2EA0D5256E542200A86EAC /* SignUp.swift in Sources */,
 				CE2EA0E7256E694D00A86EAC /* SignUpData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

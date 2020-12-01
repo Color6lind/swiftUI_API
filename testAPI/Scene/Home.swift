@@ -3,19 +3,20 @@ import Alamofire
 import Foundation
 
 struct Home: View{
-    @ObservedObject
-    var model: ViewModel = .init()
+    @EnvironmentObject
+    private var model: ViewModel
     
     var body: some View {
         VStack {
             Button (action: {
                 if self.model.isAuth == true {
-                    self.model.signout()
+                    self.model.mysignout()
                 }
-                
+                self.model.isAuth = false
+                self.model.isActiveScene = .authScene
             }) {
                 Text("Back")
-                    .font(.custom("Font", size: 42))
+                    .font(.custom("ND Astroneer", size: 42))
                     .foregroundColor(Color("ColorBG"))
             }
         }

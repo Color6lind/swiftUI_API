@@ -4,7 +4,7 @@ import Alamofire
 
 class ViewModel: ObservableObject {
     @Published
-    var isActiveScene: ChangeScene = .signin
+    var isActiveScene: ChangeScene = .authScene
     @Published
     var username: String = "pavel".lowercased()
     @Published
@@ -17,24 +17,25 @@ class ViewModel: ObservableObject {
     var userInformation: LogInData? = nil
     @Published
     var isAuth: Bool = false
+    @Published
+    var ErrorSignIn: Bool = false
     
     let height: Int = 24
     let weight: Int = 63
     
-    func signout() {
+    func mysignout() {
         AF
             .request("http://gym.areas.su/signout", method: .post, parameters: ["username": self.username])
             .responseDecodable(of: LogOutData.self) {response in
                 if response.value != nil {
                     self.isAuth = false
-                    self.isActiveScene = .signin
+                    self.isActiveScene = .authScene
                     print("Signout")
                 }
-                
             }
     }
     
-    func signin () {
+    func mysignin () {
         AF
             .request("http://gym.areas.su/signin", method: .post, parameters: [
                 "username": self.username,
@@ -46,7 +47,6 @@ class ViewModel: ObservableObject {
                     {
                         self.isAuth = true
                         self.isActiveScene = .home
-                        print(self.isActiveScene)
                         self.userInformation = response.value!
                         print("You Auth, your Token: \(self.userInformation!.notice.token)")
                     }
@@ -54,7 +54,7 @@ class ViewModel: ObservableObject {
             }
     }
     
-    func signup () {
+    func mysignup () {
         AF
             .request("http://gym.areas.su/signup", method: .post, parameters: [
                 "username": self.username,
@@ -68,8 +68,8 @@ class ViewModel: ObservableObject {
                    self.password == self.passwordRepit,
                    !self.password.isEmpty,
                    self.email.contains("@"){
-                    print(response.result)
-                    self.isActiveScene = .signin
+                    print("Person is register")
+                    self.isAuth.toggle()
                 }
             }
     }

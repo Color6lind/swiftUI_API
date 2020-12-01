@@ -3,8 +3,8 @@ import Alamofire
 import Foundation
 
 struct SignIn: View {
-    @ObservedObject
-    var model: ViewModel = .init()
+    @EnvironmentObject
+    private var model: ViewModel
     
     var body: some View {
         ZStack {
@@ -19,28 +19,29 @@ struct SignIn: View {
                     .font(.custom("ND Astoneer", size: 50))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                    .padding(.bottom)
+                    .padding(.bottom, 30)
                 
-                VStack {
+                
+                HStack {
+                    Image("Person")
+                        .padding(.leading, 15)
+                        .padding(.trailing, 5)
+                    Divider()
+                    TextField("Ivanov", text: self.$model.username)
+                        .foregroundColor(.gray)
+                }
+                .frame(height: 50)
+                .background(Color.white)
+                .cornerRadius(30)
+                .padding(.horizontal, 31)
+                
+                if self.model.isAuth {
                     HStack {
-                        Image("Person")
-                            .padding(.leading, 15)
-                            .padding(.trailing, 5)
+                        Image("Letter")
+                            .padding(.leading, 12)
+                            .padding(.trailing, 4)
                         Divider()
-                        TextField("Ivanov", text: self.$model.username)
-                            .foregroundColor(.gray)
-                    }
-                    .frame(height: 50)
-                    .background(Color.white)
-                    .cornerRadius(30)
-                    .padding(.horizontal, 31)
-                    
-                    HStack {
-                        Image("pass")
-                            .padding(.leading, 15)
-                            .padding(.trailing, 5)
-                        Divider()
-                        SecureField("••••••", text: self.$model.password)
+                        TextField("Email", text: self.$model.email)
                             .foregroundColor(.gray)
                     }
                     .frame(height: 50)
@@ -48,44 +49,113 @@ struct SignIn: View {
                     .cornerRadius(30)
                     .padding(.horizontal, 31)
                     .padding(.top, 5)
-                    .padding(.bottom, 30)
                 }
                 
-                Button(action: {
-                    self.model.signin()
-                }) {
-                    Spacer()
-                    Text("Sign In")
-                        .font(.custom("Font", size: 22))
-                        .foregroundColor(Color("ColorText"))
-                    Spacer()
+                HStack {
+                    Image("pass")
+                        .padding(.leading, 15)
+                        .padding(.trailing, 5)
+                    Divider()
+                    SecureField("••••••", text: self.$model.password)
+                        .foregroundColor(.gray)
                 }
                 .frame(height: 50)
                 .background(Color.white)
                 .cornerRadius(30)
                 .padding(.horizontal, 31)
-                .padding(.vertical)
+                .padding(.top, 5)
                 
-                
-                Button (action: {
-                    self.model.isActiveScene = .signup
-                }) {
-                    Text("Sign Up")
-                        .font(.custom("Font", size: 24))
-                        .foregroundColor(.white)
+                if self.model.isAuth {
+                    HStack {
+                        Image("pass")
+                            .padding(.leading, 15)
+                            .padding(.trailing, 5)
+                        Divider()
+                        SecureField("Repit password", text: self.$model.passwordRepit)
+                            .foregroundColor(.gray)
+                    }
+                    .frame(height: 50)
+                    .background(Color.white)
+                    .cornerRadius(30)
+                    .padding(.horizontal, 31)
+                    .padding(.top, 5)
+                    .padding(.bottom, 40)
                 }
                 
-                Spacer()
-                
-                Button (action: {
-                    self.model.isActiveScene = .home
-                }) {
-                    Text("Skip")
-                        .font(.custom("Font", size: 16))
-                        .foregroundColor(.white)
-                        .underline()
+                if self.model.isAuth {
+                    Button(action: {
+                        self.model.mysignup()
+                    }) {
+                        Spacer()
+                        Text("Sign Up")
+                            .font(.custom("Font", size: 22))
+                            .foregroundColor(Color("ColorText"))
+                        Spacer()
+                    }
+                    .frame(height: 50)
+                    .background(Color.white)
+                    .cornerRadius(30)
+                    .padding(.horizontal, 31)
+                    
+                    Spacer()
+                    
+                    Button (action: {
+                        self.model.isAuth = false
+                    }) {
+                        Text("Back")
+                            .font(.custom("Font", size: 16))
+                            .foregroundColor(.white)
+                            .underline()
+                    }
+                } else {
+                    Button(action: {
+                        self.model.mysignin()
+                    }) {
+                        Spacer()
+                        Text("Sign In")
+                            .font(.custom("Font", size: 22))
+                            .foregroundColor(Color("ColorText"))
+                            .alert(isPresented: self.$model.ErrorSignIn) {
+                                Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
+                            }
+                        
+                        Spacer()
+                    }
+                    .frame(height: 50)
+                    .background(Color.white)
+                    .cornerRadius(30)
+                    .padding(.horizontal, 31)
+                    .padding(.vertical)
+                    .padding(.top, 30)
+                    
+                    Button (action: {
+                        self.model.isAuth.toggle()
+                    }) {
+                        Text("Sign Up")
+                            .font(.custom("Font", size: 24))
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
+                    
+                    Button (action: {
+                        self.model.isActiveScene = .home
+                    }) {
+                        Text("Skip")
+                            .font(.custom("Font", size: 16))
+                            .foregroundColor(.white)
+                            .underline()
+                    }
                 }
-            }
+                
+                
+            }.animation(.easeInOut(duration: 1))
         }
+    }
+}
+
+struct SignIn_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

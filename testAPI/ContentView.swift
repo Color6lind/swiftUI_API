@@ -1,19 +1,23 @@
 import SwiftUI
 import Alamofire
+import Combine
+
 
 struct ContentView: View {
     @ObservedObject
-    var model: ViewModel = .init()
+    private var model: ViewModel = .init()
     
     var body: some View {
-        switch self.model.isActiveScene {
-        case .signin:
-             SignIn()
-        case .signup:
-             SignUp()
-        case .home:
-             Home()
-        }
+        
+        VStack {
+            switch self.model.isActiveScene {
+            case .authScene:
+                SignIn()
+                    .environmentObject(self.model)
+            case .home:
+                Home()
+                    .environmentObject(self.model)
+            }
+        }   
     }
 }
-

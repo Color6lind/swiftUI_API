@@ -9,7 +9,8 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Font.ttf</string>
+		<string>Emblema One.ttf</string>
+		<string>ND Astroneer.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

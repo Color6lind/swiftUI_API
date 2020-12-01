@@ -3,5 +3,7 @@ import SwiftUI
 import Combine
 
 enum ChangeScene {
-    case home, signin, signup
+    case home
+    case authScene
 }
+
