@@ -11,6 +11,7 @@
 		CE9226482570EFA600CA2E39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9226472570EFA600CA2E39 /* ContentView.swift */; };
 		CE92264A2570EFA800CA2E39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9226492570EFA800CA2E39 /* Assets.xcassets */; };
 		CE92264D2570EFA800CA2E39 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE92264C2570EFA800CA2E39 /* Preview Assets.xcassets */; };
+		CE94C6E12574D57300563E20 /* ND Astroneer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE94C6E02574D57300563E20 /* ND Astroneer.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		CE9226492570EFA800CA2E39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE92264C2570EFA800CA2E39 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE92264E2570EFA800CA2E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE94C6E02574D57300563E20 /* ND Astroneer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ND Astroneer.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		CE9226442570EFA600CA2E39 /* captcha */ = {
 			isa = PBXGroup;
 			children = (
+				CE94C6DF2574D52200563E20 /* Fonts */,
 				CE9226452570EFA600CA2E39 /* captchaApp.swift */,
 				CE9226472570EFA600CA2E39 /* ContentView.swift */,
 				CE9226492570EFA800CA2E39 /* Assets.xcassets */,
@@ -67,6 +70,14 @@
 				CE92264C2570EFA800CA2E39 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE94C6DF2574D52200563E20 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE94C6E02574D57300563E20 /* ND Astroneer.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE94C6E12574D57300563E20 /* ND Astroneer.ttf in Resources */,
 				CE92264D2570EFA800CA2E39 /* Preview Assets.xcassets in Resources */,
 				CE92264A2570EFA800CA2E39 /* Assets.xcassets in Resources */,
 			);
