@@ -4,14 +4,13 @@ import AVKit
 struct ContentView: View {
     @State var alphavite = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     @State var randomElements: [String.Element] = []
-    @State var randomArray: [String.Element] = []
     @State var arrayStr: String = ""
     
-    @State var captcha: String = ""
     @State var myAnswere: String = ""
     
     @State var isError: Bool = false
-    @State var isScene: Bool = false
+    @State var isScene: Bool = true
+    
     @State var randomElem: Double = Double.random(in: -40...40)
     
     var body: some View {
@@ -21,12 +20,25 @@ struct ContentView: View {
             
             if self.isScene {
                 VStack {
+                    Spacer()
                     Text("hello")
+                    Spacer()
                     Button(action: {
                         self.isScene = false
+                        self.myAnswere = ""
+                        randElem()
                     }) {
-                        Text("Back")
+                        HStack {
+                            Spacer()
+                            Text("Back")
+                            Spacer()
+                        }
                     }
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(20)
+                    .padding(.horizontal, 50)
+                    Spacer()
                 }
             } else {
                 VStack {
@@ -47,9 +59,7 @@ struct ContentView: View {
                                 self.isScene = true
                             } else {
                                 self.isError = true
-                                self.randomElements = alphavite.shuffled().dropLast(22)
-                                self.arrayStr = String(randomElements)
-                                self.randomElem = Double.random(in: -40...40)
+                                randElem()
                             }
                             
                         }) {
@@ -65,18 +75,13 @@ struct ContentView: View {
             }
         }
         .onAppear{
-            self.randomElements = alphavite.shuffled().dropLast(22)
-            self.arrayStr = String(randomElements)
-            
-            print(randomElements)
+            randElem()
         }
     }
-}
-
-struct Next: View {
-    var body: some View {
-        VStack {
-            Text("fsdf")
-        }.navigationTitle("Back")
+    
+    func randElem() {
+        self.randomElements = alphavite.shuffled().dropLast(22)
+        self.arrayStr = String(randomElements)
+        self.randomElem = Double.random(in: -40...40)
     }
 }
